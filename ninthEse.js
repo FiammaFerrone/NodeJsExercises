@@ -4,6 +4,7 @@
 // newsEvent, breakingNews and error
 // Attach event listeners for each event and log out their data.
 
+const { error } = require("node:console");
 const { EventEmitter } = require("node:events");
 
 function createNewsFeed() {
@@ -29,7 +30,7 @@ function createNewsFeed() {
     console.log(data);
   });
   emitter.on("error", (Error) => {
-    console.log(Error);
+    console.log(Error, error.message);
   });
   return emitter;
 }
